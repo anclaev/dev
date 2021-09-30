@@ -1,0 +1,4 @@
+User-agent: *
+Crawl-delay: 1
+Host: anclaev.com
+Sitemap: https://anclaev.com/robots.txt
