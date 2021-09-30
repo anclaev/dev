@@ -11,6 +11,7 @@
 	&__logo
 		height: 50px
 		user-select: none 
+		cursor: pointer
 		
 	&-social 
 		& > button
@@ -45,3 +46,40 @@
 				height: 100%
 				
 				background: linear-gradient(180deg, $primaryColor 0%, rgba(191, 145, 101, 0) 100%)
+
+.go 
+	position: fixed
+	top: 0 
+	right: 0 
+	bottom: 0 
+	left: 0
+	z-index: -1
+	overflow: hidden
+	
+	&__video
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+
+@media (min-aspect-ratio: 16/9) 
+	.go__video
+		height: 200%
+		top: -50%
+  
+@media (max-aspect-ratio: 16/9) 
+	.go__video 
+		width: 200% 
+		left: -50%
+	
+@supports (object-fit: cover) 
+	.go > video 
+		top: 0 
+		left: 0
+		width: 100% 
+		height: 100%
+		object-fit: cover
+  
+
+  

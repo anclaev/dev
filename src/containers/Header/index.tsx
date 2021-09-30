@@ -1,3 +1,7 @@
+import { useCallback } from "react"
+import { useDispatch } from "react-redux"
+import { push } from "connected-react-router"
+
 import { social } from "../../config/data.json"
 import Logo from "../../assets/images/logo.svg"
 
@@ -10,12 +14,19 @@ import { Image } from "../../components/Image"
 import { LinkButton } from "../../components/LinkButton"
 
 export const Header: React.FC = () => {
+  const dispatch = useDispatch()
+
+  const logoClickHandler = useCallback(() => {
+    dispatch(push("/"))
+  }, [dispatch])
+
   return (
     <header className="header">
       <Image
         className="header__logo"
         src={Logo}
         alt="Logo: Anclaev Development"
+        onClick={logoClickHandler}
       />
       <div className="header-social">
         <LinkButton href={social.github}>
