@@ -1,3 +1,43 @@
 @import 'https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css'
+@import 'https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Roboto:wght@300;400;500&display=swap'
+
 @import './_vars'
 @import './_components'
+@import './_containers'
+@import './_pages'
+
+html
+	font-family: $rootFont
+
+	& *::selection
+		background: rgba($primaryColor, .5)
+
+
+body 
+	height: 100vh
+	overflow-y: auto
+
+	background: $primaryBackgroundColor
+	background-image: url(../assets/images/poster.png)
+	background-repeat: no-repeat
+	background-position: top center
+	background-size: cover
+
+	color: $primaryFontColor
+
+button
+	user-select: none
+
+.container
+	width: 90%
+	max-width: 1140px
+	margin: 0 auto
+
+::-webkit-scrollbar 
+	width: 7px
+	background-color: $primaryBackgroundColor
+
+
+::-webkit-scrollbar-thumb 
+	background-color: $primaryColor
+	border-radius: 9em
